@@ -1,0 +1,18 @@
+name: Local CI Runner
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Print welcome message
+        run: echo "Hello from Kotlin GitHub Actions Runner!"
+      - name: Check system info
+        run: ver && cd
+      - name: Create a file
+        run: type nul > myfile.txt
+
+  populate:
+    runs: windows-latest
+    steps:
+      - name: add data
+        run: curl -o myfile.txt https://byui-cse.github.io/cse310-ww-course/modules/language_kotlin/README.md
